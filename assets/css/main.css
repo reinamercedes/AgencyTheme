@@ -1,0 +1,25 @@
+#hero-image {
+  color: white;
+  background-position: 100%;
+  background-size: 100%;
+  background-image: url("../../img/header-bg.jpg"); }
+  #hero-image nav .navbar-header, #hero-image nav #bs-example-navbar-collapse-1 {
+    margin-top: 2%; }
+    #hero-image nav .navbar-header a.navbar-brand, #hero-image nav #bs-example-navbar-collapse-1 a.navbar-brand {
+      color: #FED136; }
+  #hero-image nav #bs-example-navbar-collapse-1 ul li a {
+    color: white; }
+    #hero-image nav #bs-example-navbar-collapse-1 ul li a:hover {
+      background-color: transparent;
+      color: #FED136; }
+  #hero-image .main-title .subtitle {
+    color: white;
+    font-size: 3em;
+    text-align: center; }
+  #hero-image .main-title .title {
+    font-size: 5em;
+    color: white;
+    text-align: center;
+    font-weight: 700; }
+
+/*# sourceMappingURL=main.css.map */

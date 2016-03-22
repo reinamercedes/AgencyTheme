@@ -1,0 +1,50 @@
+//variables
+$amarillo: #FED136;
+//mixins
+@mixin subtitle($size,$color) {
+    color: $color;
+    font-size: $size;
+    text-align: center;
+}
+@mixin titles($size,$color) {
+	font-size: $size;
+	color: $color;
+    text-align: center;
+    font-weight: 700;
+}
+#hero-image {
+	color: white;
+	background-position: 100%;
+	background-size: 100%;
+	background-image: url("../../img/header-bg.jpg");
+    nav {
+    	.navbar-header {
+    		margin-top: 2%;
+    		a.navbar-brand {
+    			color: $amarillo;
+    		}
+    	}
+    	#bs-example-navbar-collapse-1 {
+    		@extend .navbar-header;
+    		ul {
+    			li {
+    				a {
+    					color: white;
+    					&:hover {
+    						background-color: transparent;
+    						color: $amarillo;
+    					}
+    				}
+    			}
+    		}
+    	}
+    }
+    .main-title {
+    	.subtitle {
+    		@include subtitle(3em,white);
+    	}
+    	.title {
+    		@include titles(5em,white);
+    	}
+    }
+}
