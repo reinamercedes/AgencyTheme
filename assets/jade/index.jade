@@ -5,8 +5,37 @@ html
         title
         link(rel="stylesheet", href="assets/css/bootstrap.css")
         link(rel="stylesheet", href="assets/css/main.css")
-        link(rel="stylesheet", href="font-awesome/css/font-awesome.min.css")
+        link(rel="stylesheet", href="assets/font-awesome/css/font-awesome.min.css")
+        link(rel="stylesheet", href='https://fonts.googleapis.com/css?family=Montserrat', type='text/css')
+        link(rel="stylesheet", href='https://fonts.googleapis.com/css?family=Kaushan+Script', type='text/css')
+        link(rel="stylesheet", href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300', type='text/css')
+        link(rel="stylesheet", href='https://fonts.googleapis.com/css?family=Droid+Serif:700italic,400italic,400,700', type='text/css')
     body
+        //-mixins
+        mixin navbar-list
+                li 
+                    a(href='#') SERVICES 
+                li
+                    a(href='#') PORTFOLIO
+                li
+                    a(href='#') ABOUT
+                li
+                    a(href='#') TEAM
+                li
+                    a(href='#') CONTACT
+        mixin first-title(title)
+            h2=title
+            h3 Lorem ipsum dolor sit amet consectetur
+        mixin serv-item(title)
+            h4= title
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, sunt totam porro fugit commodi perspiciatis, fuga tenetur ullam.       
+        mixin item-port(src)
+            div
+                img(src=src class="img-responsive")
+        mixin label-name(name,label) 
+            h4= name 
+            h5= label
+        //-aqui es donde empieza la acción :3
         section#hero-image
             div.container
                 div.row
@@ -21,18 +50,174 @@ html
                                 a.navbar-brand(href='#') Start Bootstrap
                             div#bs-example-navbar-collapse-1.collapse.navbar-collapse
                                 ul.nav.navbar-nav.navbar-right
-                                    li 
-                                        a(href='#') SERVICES 
-                                    li
-                                        a(href='#') PORTFOLIO
-                                    li
-                                        a(href='#') ABOUT
-                                    li
-                                        a(href='#') TEAM
-                                    li
-                                        a(href='#') CONTACT
+                                    +navbar-list
                 div.row.main-title
                     h2.subtitle Welcome To Our Studio!
                     h1.title IT'S NICE TO MEET YOU  
                     button.general-btn 
                         p TELL ME MORE
+        section#services 
+            div.container
+                div.row 
+                    +first-title('SERVICES')
+                div.row 
+                    div.col-md-4
+                        div.icono
+                            i.fa.fa-shopping-cart
+                        +serv-item('E-commerce')
+                    div.col-md-4
+                        div.icono
+                            i.fa.fa-laptop
+                        +serv-item('Responsive Design')
+                    div.col-md-4
+                        div.icono
+                            i.fa.fa-lock
+                        +serv-item('Web Security')
+        section#portfolio 
+            div.container
+                div.row 
+                    +first-title('PORTFOLIO')
+                div.row 
+                    div.col-md-4 
+                        div.image-port
+                            +item-port('img/portfolio/roundicons.png')
+                            +label-name('Round Icons','Graphic Design')
+                    div.col-md-4 
+                        div.image-port
+                            +item-port('img/portfolio/startup-framework.png')
+                            +label-name('Startup Framework','Website Design')
+                    div.col-md-4 
+                        div.image-port
+                            +item-port('img/portfolio/treehouse.png')
+                            +label-name('Tree House','Website Design') 
+                div.row 
+                    div.col-md-4 
+                        div.image-port
+                            +item-port('img/portfolio/golden.png')
+                            +label-name('Golden','Website Design')
+                    div.col-md-4 
+                        div.image-port
+                            +item-port('img/portfolio/escape.png')
+                            +label-name('Escape','Website Design')
+                    div.col-md-4 
+                        div.image-port
+                            +item-port('img/portfolio/dreams.png')
+                            +label-name('Dream','Website Design')
+        section#about
+            div.container
+                div.row 
+                    +first-title('ABOUT')
+                div.row
+                    div.col-md-6 
+                        div.parrafo-right-about
+                            +label-name('2009-2011','Our Humble Beginnings')
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit.Nesciunt veniam voluptate, reiciendis vel ipsa pariatur error omnis. Excepturi ad perferendis eveniet error nisi.
+                    div.col-md-6
+                        img(src="img/about/1.jpg" class = "img-responsive left")
+                div.row
+                    div.col-md-6
+                        img(src="img/about/2.jpg" class = "img-responsive right")
+                    div.col-md-6
+                        div.parrafo-left-about
+                            +label-name('MARCH 2011','An Agency is Born')
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt veniam voluptate, reiciendis vel ipsa pariatur error omnis. Excepturi ad perferendis eveniet error nisi.
+                div.row
+                    div.col-md-6 
+                        div.parrafo-right-about
+                            +label-name('DECEMBER 2012','Transition to full service')
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt veniam voluptate, reiciendis vel ipsa pariatur error omnis. Excepturi ad perferendis eveniet error nisi.
+                    div.col-md-6   
+                        img(src="img/about/3.jpg" class = "img-responsive left")
+                div.row
+                    div.col-md-6          
+                        img(src="img/about/4.jpg" class = "img-responsive right")
+                    div.col-md-6
+                        div.parrafo-left-about
+                            +label-name('JULY 2014','Phase Two Expansion')
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt veniam voluptate, reiciendis vel ipsa pariatur error omnis. Excepturi ad perferendis eveniet error nisi.
+                div.row
+                    div.col-md-12 
+                        div.button-about
+                            p BE PART OF OUR STORY!
+        section#team 
+            div.container
+                div.row
+                    +first-title('OUR AMAZING TEAM')
+                div.row 
+                    div.col-md-4         
+                        img(src="img/team/1.jpg")
+                        +label-name('Kay Garland','Lead Designer')
+                        div.icon-team.ml30
+                            i.fa.fa-twitter
+                        div.icon-team
+                            i.fa.fa-facebook
+                        div.icon-team
+                            i.fa.fa-linkedin
+                    div.col-md-4         
+                        img(src="img/team/2.jpg")
+                        +label-name('Larry Parker','Lead Markerter')
+                        div.icon-team.ml30
+                            i.fa.fa-twitter
+                        div.icon-team
+                            i.fa.fa-facebook
+                        div.icon-team
+                            i.fa.fa-linkedin
+                    div.col-md-4         
+                        img(src="img/team/3.jpg")
+                        +label-name('Diana Pertersen','Lead Developer')
+                        div.icon-team.ml30
+                            i.fa.fa-twitter
+                        div.icon-team
+                            i.fa.fa-facebook
+                        div.icon-team
+                            i.fa.fa-linkedin
+                div.row 
+                     p
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime iure, corporis, aliquid odit placeat, quis
+                        br
+                        | natus est debitis esse sequi ab architecto fugit ad.
+        section#companies
+            div.container
+                div.row
+                    img(src="img/logos/envato.jpg")
+                    img(src="img/logos/designmodo.jpg")
+                    img(src="img/logos/themeforest.jpg")
+                    img(src="img/logos/creative-market.jpg")
+        section#contact
+            div.container
+                div.row
+                    +first-title('CONTACT US')
+                div.row 
+                    div.col-md-6 
+                        input(type="text" placeholder="YOUR NAME*")
+                        br
+                        input(type="text" placeholder="YOUR EMAIL*")
+                        br
+                        input(type="text" placeholder="YOUR PHONE*")
+                    div.col-md-6 
+                        textarea(placeholder="YOUR MESSAGE*", cols="30", rows="10")
+                div.row 
+                    button.general-btn 
+                        p SEND MESSAGE
+        footer 
+            div.container
+                div.row
+                    div.col-md-4 
+                        p Copyright &#169 Your Website 2014
+                    div.col-md-4
+                        div.icon-team
+                            i.fa.fa-twitter
+                        div.icon-team
+                            i.fa.fa-facebook
+                        div.icon-team
+                            i.fa.fa-linkedin
+                    div.col-md-4 
+                        p.amarillo Privacy Policy  Terms of use
+
+
+
+
+
+
+
+                    

@@ -1,25 +1,260 @@
+.ml30 {
+  margin-left: 30%; }
+
+#services h2, #portfolio h2, #about h2, #team h2, #contact h2 {
+  font-size: 3em;
+  color: #333333;
+  font-family: Montserrat;
+  text-align: center;
+  font-weight: 700; }
+#services h3, #portfolio h3, #about h3, #team h3, #contact h3 {
+  color: #6F7769;
+  font-size: 1.2em;
+  text-align: center;
+  font-family: Droid Serif;
+  font-style: italic;
+  margin-bottom: 100px; }
+
+#portfolio .col-md-4 .image-port h4, #team h4 {
+  margin-top: 7%;
+  font-size: 1.3em;
+  color: #333333;
+  font-family: Montserrat;
+  text-align: center;
+  font-weight: 700; }
+#portfolio .col-md-4 .image-port h5, #team h5 {
+  color: #6F7769;
+  font-size: 1.2em;
+  text-align: center;
+  font-family: Droid Serif;
+  font-style: italic; }
+
+#about .col-md-6 h4,
+#about .col-md-6 h5 {
+  font-size: 1.3em;
+  color: #333333;
+  font-family: Montserrat;
+  font-weight: 700; }
+
 #hero-image {
   color: white;
+  padding-bottom: 14%;
   background-position: 100%;
   background-size: 100%;
   background-image: url("../../img/header-bg.jpg"); }
-  #hero-image nav .navbar-header, #hero-image nav #bs-example-navbar-collapse-1 {
-    margin-top: 2%; }
-    #hero-image nav .navbar-header a.navbar-brand, #hero-image nav #bs-example-navbar-collapse-1 a.navbar-brand {
-      color: #FED136; }
-  #hero-image nav #bs-example-navbar-collapse-1 ul li a {
-    color: white; }
-    #hero-image nav #bs-example-navbar-collapse-1 ul li a:hover {
-      background-color: transparent;
-      color: #FED136; }
+  #hero-image nav {
+    margin-bottom: 17%; }
+    #hero-image nav .navbar-header, #hero-image nav #bs-example-navbar-collapse-1 {
+      margin-top: 2%; }
+      #hero-image nav .navbar-header a.navbar-brand, #hero-image nav #bs-example-navbar-collapse-1 a.navbar-brand {
+        color: #FED136;
+        font-family: Kaushan Script;
+        font-size: 2em; }
+    #hero-image nav #bs-example-navbar-collapse-1 ul li a {
+      color: white;
+      font-family: Montserrat;
+      font-size: 1.1em; }
+      #hero-image nav #bs-example-navbar-collapse-1 ul li a:hover {
+        background-color: transparent;
+        color: #FED136; }
   #hero-image .main-title .subtitle {
     color: white;
     font-size: 3em;
-    text-align: center; }
+    text-align: center;
+    font-family: Droid Serif;
+    font-style: italic; }
   #hero-image .main-title .title {
-    font-size: 5em;
+    font-size: 5.6em;
     color: white;
+    font-family: Montserrat;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 4%; }
+  #hero-image .main-title .general-btn {
+    display: block;
+    background-color: #FED136;
+    border-style: none;
+    border-radius: 4px;
+    padding: 2% 5% 1%;
+    font-family: Montserrat;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: auto;
+    color: white; }
+
+#services {
+  padding: 10% 0;
+  background-color: white; }
+  #services .col-md-4 .icono {
+    margin: 0 auto;
+    text-align: center;
+    background-color: #FED136;
+    border-radius: 62px;
+    width: 98px;
+    height: 95px;
+    font-size: 4em;
+    padding-top: 2%;
+    color: white; }
+  #services .col-md-4 h4 {
+    margin: 5% 0;
+    font-size: auto;
+    color: #333333;
+    font-family: Montserrat;
     text-align: center;
     font-weight: 700; }
+  #services .col-md-4 p {
+    font-family: Roboto Slab;
+    text-align: center;
+    color: #6F7769; }
+
+#portfolio {
+  padding: 10% 0;
+  background-color: #F7F7F7; }
+  #portfolio .col-md-4 .image-port {
+    margin-bottom: 8%;
+    padding-bottom: 5%;
+    background-color: white; }
+
+#about {
+  padding: 10% 0;
+  background-color: white; }
+  #about .col-md-6:first-child {
+    border-right: 2px solid #F1F1F1; }
+  #about .col-md-6 .parrafo-left-about {
+    font-family: Roboto Slab;
+    text-align: left;
+    color: #6F7769; }
+  #about .col-md-6 .parrafo-right-about {
+    font-family: Roboto Slab;
+    text-align: right;
+    color: #6F7769; }
+  #about .col-md-6 .parrafo-right-about,
+  #about .col-md-6 .parrafo-left-about {
+    margin: 0 23.6% 28%; }
+  #about .col-md-6 img.left {
+    float: left;
+    position: relative;
+    left: -107px;
+    right: auto;
+    top: -11px;
+    margin: 11px 0 20%;
+    border-radius: 100px;
+    height: 179px;
+    border: 8px solid #F1F1F1; }
+  #about .col-md-6 img.right {
+    float: right;
+    position: relative;
+    left: auto;
+    right: -104px;
+    top: -11px;
+    margin: 11px 0 20%;
+    border-radius: 100px;
+    height: 179px;
+    border: 8px solid #F1F1F1; }
+  #about .col-md-12 .button-about {
+    display: inherit;
+    background-color: #FED136;
+    border-style: none;
+    border-radius: 100px;
+    padding: 3%;
+    font-family: Montserrat;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: auto;
+    color: white;
+    width: 165px;
+    text-align: center;
+    border: 8px solid #F1F1F1; }
+
+#team {
+  padding: 10% 0;
+  background-color: #F7F7F7; }
+  #team .col-md-4 img {
+    margin: auto;
+    display: block;
+    border-radius: 125px;
+    height: auto;
+    border: 8px solid white; }
+  #team .col-md-4 .icon-team {
+    display: inline-block;
+    color: white;
+    background-color: #6F7769;
+    border-radius: 30px;
+    font-size: 1.5em;
+    width: 45px;
+    text-align: center;
+    height: 42px;
+    padding: 2% 0; }
+  #team p {
+    margin-top: 5%;
+    font-family: Roboto Slab;
+    text-align: center;
+    color: #6F7769; }
+
+#companies {
+  padding: 3% 0;
+  background-color: white; }
+  #companies img {
+    margin: 0 3.9%;
+    display: block;
+    float: left; }
+
+#contact {
+  padding: 10% 0;
+  background-color: #333333; }
+  #contact h2 {
+    color: white; }
+  #contact .col-md-6 input,
+  #contact .col-md-6 textarea {
+    display: block;
+    margin: auto; }
+  #contact .col-md-6 input {
+    width: 100%;
+    border-radius: 5px;
+    border-style: none;
+    padding: 3%;
+    font-weight: 700; }
+  #contact .col-md-6 textarea {
+    width: 100%;
+    border-radius: 5px;
+    border-style: none;
+    padding: 3%;
+    font-weight: 700;
+    margin-bottom: 5%;
+    height: 200px; }
+  #contact .general-btn {
+    margin-top: 2%;
+    display: block;
+    background-color: #FED136;
+    border-style: none;
+    border-radius: 4px;
+    padding: 2% 5% 1%;
+    font-family: Montserrat;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: auto;
+    color: white; }
+
+footer {
+  text-align: center;
+  padding: 2% 0;
+  background-color: white; }
+  footer p {
+    margin-top: 3%;
+    font-family: Montserrat;
+    color: #333333; }
+  footer p.amarillo {
+    font-family: Montserrat;
+    color: #FED136; }
+  footer .icon-team {
+    display: inline-block;
+    color: white;
+    background-color: #6F7769;
+    border-radius: 30px;
+    font-size: 1.5em;
+    width: 45px;
+    text-align: center;
+    height: 42px;
+    padding: 2% 0; }
 
 /*# sourceMappingURL=main.css.map */

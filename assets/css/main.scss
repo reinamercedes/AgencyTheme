@@ -1,27 +1,165 @@
 //variables
 $amarillo: #FED136;
+$negro: #333333;
+$graybg: #F7F7F7;
+$gray-border: #F1F1F1;
+$parrafo-color: #6F7769;
+$f-logo: Kaushan Script;
+$f-subtitle: Droid Serif;
+$f-title: Montserrat;
+$f-parrafo: Roboto Slab;
 //mixins
-@mixin subtitle($size,$color) {
+@mixin subtitle-modf($size,$color) {
     color: $color;
     font-size: $size;
     text-align: center;
+    font-family: $f-subtitle;
+    font-style: italic;
 }
-@mixin titles($size,$color) {
+@mixin titles-modf($size,$color) {
 	font-size: $size;
 	color: $color;
+	font-family: $f-title;
     text-align: center;
     font-weight: 700;
 }
+@mixin subtitle-sect {
+    color: $parrafo-color;
+    font-size: 1.2em;
+    text-align: center;
+    font-family: $f-subtitle;
+    font-style: italic;
+    margin-bottom: 100px;
+}
+@mixin titles-sect {
+	font-size: 3em;
+	color: $negro;
+	font-family: $f-title;
+    text-align: center;
+    font-weight: 700;
+}
+@mixin parrafo($align) {
+	font-family: $f-parrafo;
+    text-align: $align;
+    color: $parrafo-color;
+}
+@mixin gen-but {
+	display: block;
+    background-color: $amarillo;
+    border-style: none;
+    border-radius: 4px;
+    padding: 2% 5% 1%;
+    font-family: $f-title;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: auto;
+    color: white;
+}
+@mixin gen-but-modf($radius) {
+	display: inherit;
+    background-color: $amarillo;
+    border-style: none;
+    border-radius: $radius;
+    padding: 3%;
+    font-family: $f-title;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: auto;
+    color: white;
+}
+@mixin icono-service {
+	margin: 0 auto;
+    text-align: center;
+    background-color: $amarillo;
+    border-radius: 62px;
+    width: 98px;
+    height: 95px;
+    font-size: 4em;
+    padding-top: 2%;
+    color: white;
+}
+@mixin icono-team {
+	display: inline-block;
+    color: white;
+    background-color: $parrafo-color;
+    border-radius: 30px;
+    font-size: 1.5em;
+    width: 45px;
+    text-align: center;
+    height: 42px;
+    padding: 2% 0;
+}
+@mixin seccion($pad,$color) {
+	padding: $pad 0;
+	background-color:$color;
+}
+@mixin image-radius($radius,$height,$bcolor) {
+    border-radius: $radius;
+    height: $height;
+    border: 8px solid $bcolor;
+}
+@mixin input-textar {
+			width: 100%;
+			border-radius: 5px;
+            border-style: none;
+            padding: 3%;
+            font-weight: 700;
+}
+//mixin no adaptable
+@mixin imgdetail-bout($align,$percent-l,$percent-r) {
+    float: $align;
+    position: relative;
+    left: $percent-l;
+    right: $percent-r;
+    top: -11px;
+    margin: 11px 0 20%;
+}
+
+//placeholders
+.ml30 {
+	margin-left: 30%;
+}
+%title-sect {
+	h2 {
+		@include titles-sect;
+	}
+	h3 { 
+		@include subtitle-sect;
+	}	
+}
+%label-name {
+	h4 {
+    	margin-top: 7%;
+    	@include titles-modf(1.3em,$negro);
+    }
+    h5 {
+    	@include subtitle-modf(1.2em,$parrafo-color);
+    }
+}
+%label-about {
+	h4,
+	h5 {
+    	font-size: 1.3em;
+		color: $negro;
+		font-family: $f-title;
+	    font-weight: 700;
+    }
+}
+//sass 
 #hero-image {
 	color: white;
+    padding-bottom: 14%;
 	background-position: 100%;
 	background-size: 100%;
 	background-image: url("../../img/header-bg.jpg");
     nav {
+    	margin-bottom: 17%;
     	.navbar-header {
     		margin-top: 2%;
     		a.navbar-brand {
     			color: $amarillo;
+    			font-family: $f-logo;
+    			font-size: 2em;
     		}
     	}
     	#bs-example-navbar-collapse-1 {
@@ -30,6 +168,8 @@ $amarillo: #FED136;
     			li {
     				a {
     					color: white;
+    					font-family: $f-title;
+    					font-size: 1.1em;
     					&:hover {
     						background-color: transparent;
     						color: $amarillo;
@@ -41,10 +181,147 @@ $amarillo: #FED136;
     }
     .main-title {
     	.subtitle {
-    		@include subtitle(3em,white);
+    		@include subtitle-modf(3em,white);
     	}
     	.title {
-    		@include titles(5em,white);
+    		@include titles-modf(5.6em,white);
+    		margin-bottom: 4%;
+    	}
+    	.general-btn {
+    		@include gen-but;
+    	}
+    }    
+}
+#services {
+	@include seccion(10%,white);
+	@extend %title-sect;
+	.col-md-4 {
+		.icono {	
+			@include icono-service;
+		}
+		h4 {
+			margin: 5% 0;
+			@include titles-modf(auto,$negro);
+		}
+		p {
+			@include parrafo(center);
+		}
+	}
+}
+#portfolio {
+	@include seccion(10%,$graybg);
+    @extend %title-sect;
+    .col-md-4 {
+    	.image-port {
+    		margin-bottom: 8%;
+    		padding-bottom: 5%;
+    		background-color: white;
+    	    @extend %label-name;
     	}
     }
+}
+#about {
+	@include seccion(10%,white);
+	@extend %title-sect;
+	.col-md-6 {
+		&:first-child {
+			border-right: 2px solid $gray-border;
+		}
+		.parrafo-left-about {
+			@include parrafo(left);
+		}
+		.parrafo-right-about {
+			@include parrafo(right);
+		}
+		.parrafo-right-about,
+		.parrafo-left-about {
+			margin: 0 23.6% 28%;
+		}
+		img.left {
+			@include imgdetail-bout(left,-107px,auto);
+            @include image-radius(100px,179px,$gray-border);
+		}
+		img.right {
+			@include imgdetail-bout(right,auto,-104px);
+			@include image-radius(100px,179px,$gray-border);
+		}
+		@extend %label-about;
+	}
+	.col-md-12 {
+		.button-about {
+		    @include gen-but-modf(100px);
+		    width: 165px;
+            text-align: center;
+		    border: 8px solid $gray-border;
+		}
+	}
+}
+#team {
+	@include seccion(10%,$graybg);
+	@extend %title-sect;
+	@extend %label-name;
+	.col-md-4 {
+	    img {
+            margin: auto;
+            display: block;
+            @include image-radius(125px,auto,white);
+	    }
+	    .icon-team {
+	    	@include icono-team;
+	    }
+	}
+	p {
+		margin-top: 5%;
+		@include parrafo(center);
+	}
+}
+#companies {
+	@include seccion(3%,white);
+	img {
+		margin: 0 3.9%;
+		display: block;
+		float: left;
+	}
+}
+#contact {
+	@include seccion(10%,$negro);
+	@extend %title-sect;
+	h2 {
+		color: white
+	}
+	.col-md-6 {
+		input,
+		textarea {
+			display: block;
+			margin: auto;
+		}
+		input {
+			@include input-textar;
+		}
+		textarea {
+			@include input-textar;
+			margin-bottom: 5%;
+			height: 200px;
+        }
+	}
+	.general-btn {
+		margin-top: 2%;
+		@include gen-but;
+	}
+}
+footer {
+	text-align: center;
+	@include seccion(2%,white);
+	p {
+		margin-top: 3%;
+		font-family: Montserrat;
+		color: $negro;
+	}
+	p.amarillo {
+		font-family: Montserrat;
+		color: $amarillo;
+	}
+	.icon-team {
+        @include icono-team;		
+	}
 }
